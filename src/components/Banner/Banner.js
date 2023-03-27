@@ -41,7 +41,7 @@ function Banner() {
               fontFamily: "Montserrat",
             }}
           >
-            Crypto
+            CryptoMind
           </Typography>
           <Typography
             variant="subtitle2"

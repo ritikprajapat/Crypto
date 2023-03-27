@@ -50,7 +50,7 @@ function Header() {
               variant="h6"
               className={classes.title}
             >
-              Crypto
+              CryptoMind
             </Typography>
             <Link to="/price-prediction">Price Prediction</Link>
             <Link to="/automatic-trader" style={{ marginLeft: 15 }}>
