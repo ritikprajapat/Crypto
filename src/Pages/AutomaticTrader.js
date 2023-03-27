@@ -2,9 +2,8 @@ import { useEffect } from "react";
 
 function AutomaticTraderPage() {
   useEffect(() => {
-    window.open(
-      // "Link",
-      "_blank"
+    window.location.replace(
+      "https://shubham7204-final-year-cpp-project-crypto-main-mcgwdf.streamlit.app/"
     );
   }, []);
   return useEffect;
