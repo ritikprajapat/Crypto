@@ -2,10 +2,12 @@ import { useEffect } from "react";
 
 function PricePredictionPage() {
   useEffect(() => {
-    window.location.replace(
-      "https://shubham7204-final-year-cpp-project-crypto-main-mcgwdf.streamlit.app/"
+    window.open(
+      "https://shubham7204-final-year-cpp-project-crypto-main-mcgwdf.streamlit.app/",
+      "_blank"
     );
-  });
-  return () => useEffect;
+  }, []);
+  return useEffect;
 }
+
 export default PricePredictionPage;
