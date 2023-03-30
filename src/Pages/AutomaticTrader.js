@@ -3,7 +3,7 @@ import { useEffect } from "react";
 function AutomaticTraderPage() {
   useEffect(() => {
     window.open(
-      // "link",
+      "https://cryptomind-virtualtrading.netlify.app/",
       "_blank"
     );
   }, []);
