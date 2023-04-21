@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Card,
   CardActionArea,
@@ -14,15 +15,23 @@ function CryptoNewsPage() {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    const fetchNews = async () => {
-      const response = await fetch(
-        "https://newsapi.org/v2/everything?q=crypto&sortBy=publishedAt&apiKey=2add6454cc4b437faa0119d10ae90237"
-      );
-      const data = await response.json();
-      setNews(data.articles);
+    const fetchData = async () => {
+      const options = {
+        method: "GET",
+        url: "https://bing-news-search1.p.rapidapi.com/news/search",
+        params: { q: "cryptocurrency", freshness: "Day", count: "20" },
+        headers: {
+          "x-bingapis-sdk": "true",
+          "x-rapidapi-host": "bing-news-search1.p.rapidapi.com",
+          "x-rapidapi-key":
+            "7473eae622mshac5be071418e177p1b6db0jsn2c87a06af9f3",
+        },
+      };
+      const response = await axios.request(options);
+      setNews(response.data.value);
     };
 
-    fetchNews();
+    fetchData();
   }, []);
 
   return (
@@ -36,14 +45,17 @@ function CryptoNewsPage() {
               >
                 <CardMedia
                   component="img"
-                  alt={article.title}
+                  alt={article.name}
                   height="140"
-                  image={article.urlToImage}
-                  title={article.title}
+                  image={
+                    article.image?.thumbnail?.contentUrl ||
+                    "https://via.placeholder.com/150"
+                  }
+                  title={article.name}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    {article.title}
+                    {article.name}
                   </Typography>
                   <Typography
                     variant="body2"

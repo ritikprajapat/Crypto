@@ -53,8 +53,8 @@ function Header() {
               CryptoMind
             </Typography>
             <Link to="/price-prediction">Price Prediction</Link>
-            <Link to="/automatic-trader" style={{ marginLeft: 15 }}>
-              Automatic Trader
+            <Link to="/virtual-trading" style={{ marginLeft: 15 }}>
+              Virtual Trading
             </Link>
             <Link to="/crypto-news" style={{ marginLeft: 15 }}>
               Crypto News

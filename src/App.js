@@ -6,8 +6,7 @@ import CoinPage from "./Pages/CoinPage";
 import Header from "./components/Header";
 import CryptoNews from "./Pages/CryptoNews";
 import PricePractice from "./Pages/PricePrediction";
-import AutomaticTrader from "./Pages/AutomaticTrader";
-
+import VirtualTrading from "./Pages/virtualTrading";
 const useStyles = makeStyles(() => ({
   App: {
     backgroundColor: "#14161a",
@@ -27,7 +26,7 @@ function App() {
         <Route path="/coins/:id" component={CoinPage} exact />
         <Route path="/crypto-news" component={CryptoNews} exact />
         <Route path="/price-prediction" component={PricePractice} exact />
-        <Route path="/automatic-trader" component={AutomaticTrader} exact />
+        <Route path="/virtual-trading" component={VirtualTrading} exact />
       </div>
     </BrowserRouter>
   );
